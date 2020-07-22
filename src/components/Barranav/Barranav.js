@@ -19,7 +19,7 @@ const Barranav = () => {
 <React.Fragment>
 
 <Navbar className="navbar navbar-dark bg-dark" expand="md">
-      <NavbarBrand tag={Link} to="/">MyPocket Links</NavbarBrand>
+      <NavbarBrand tag={Link} to="/">Bonini81 E-books</NavbarBrand>
 
         <Nav className="mr-auto" navbar>
           <NavItem>

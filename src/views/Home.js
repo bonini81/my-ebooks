@@ -1,4 +1,5 @@
 import React from 'react';
+import Booklist from '../components/Booklist/';
 
 
 const Home = () => {
@@ -6,7 +7,7 @@ const Home = () => {
     return (  
 
               <React.Fragment>
-                  <p>Hello Jo Sexy Aguirre!</p>
+                  <Booklist />
               </React.Fragment>
         );
 
