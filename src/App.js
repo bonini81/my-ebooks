@@ -7,6 +7,8 @@ import Navigation from './components/Navigation/';
 import Nonavigation from './components/Nonavigation/';
 // Views
 import Login from './views/Login';
+import Signup from './views/Signup';
+
 
 import { Container } from 'reactstrap';
 import Routes from './Routes';

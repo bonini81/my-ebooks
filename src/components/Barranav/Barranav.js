@@ -28,6 +28,10 @@ const Barranav = () => {
           <NavItem>
             <NavLink tag={Link} to="/home">Home</NavLink>
           </NavItem>
+
+          <NavItem>
+            <NavLink tag={Link} to="/signup">Sign Up</NavLink>
+          </NavItem>
         </Nav>
       
     </Navbar>
