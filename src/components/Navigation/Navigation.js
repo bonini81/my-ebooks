@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaUpload, FaSignInAlt, FaHome, FaFileSignature } from 'react-icons/fa';
-
+import { BsLightningFill } from "react-icons/bs";
 
 import {
  Collapse,
@@ -23,7 +23,7 @@ const Navigation = () => {
 <React.Fragment>
 
 <Navbar className="navbar navbar-dark bg-dark" expand="md">
-      <NavbarBrand tag={Link} to="/">Bonini81 E-books</NavbarBrand>
+      <NavbarBrand tag={Link} to="/"><BsLightningFill /> Bonini81 E-books</NavbarBrand>
 
         <Nav className="mr-auto" navbar>
           <NavItem>

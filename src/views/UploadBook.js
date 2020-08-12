@@ -9,30 +9,33 @@ import {
 } from 'reactstrap';
 
 const Signup = () => {
-  const [userName, setUserName] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [nombreLibro, setNombreLibro] = useState('');
+  const [autorLibro, setAutorLibro] = useState('');
+  const [categoriaLibro, setCategoriaLibro] = useState('');
+  const [descripcionLibro, setDescripcionLibro] = useState('');
+  const [fechaPublicacion, setFechaPublicacion] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  
 
   const handleInput = (e) => {
     switch (e.target.name) {
 
-      case "inputUserName":
-        setUserName(e.target.value)
+      case "InputNombreLibro":
+        setNombreLibro(e.target.value)
         break;
-      case "inputFirstName":
-        setFirstName(e.target.value)
+      case "inputAutorLibro":
+        setAutorLibro(e.target.value)
         break;
-      case "lastName":
-        setLastName(e.target.value)
+      case "categoriaLibro":
+        setCategoriaLibro(e.target.value)
         break;
-      case "email":
-        setEmail(e.target.value)
+        case "descripcionLibro":
+          setDescripcionLibro(e.target.value)
+          break;
+      case "fechaPublicacion":
+        setFechaPublicacion(e.target.value)
         break;
-      case "password":
-        setPassword(e.target.value)
-        break;
+     
       default:
         break;
     }
@@ -41,11 +44,13 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const jsonSend = {
-      user_name: userName,
-      first_name: firstName,
-      last_name: lastName,
+      nombre_libro: nombreLibro,
+      autor_libro: autorLibro,
+      categoria_libro: categoriaLibro,
+      descripcion_libro: descripcionLibro,
+      fecha_publicacion: fechaPublicacion,
       email,
-      password,
+    
     }
     try {
       const res = await axios.post('https://ebooks-backend.herokuapp.com/api/v1/users/signup', jsonSend);
@@ -58,57 +63,57 @@ const Signup = () => {
   return (
     <React.Fragment>
       <section className="form-signup">
-      <h1 className="mb-4">Registro VIP</h1>
+      <h2 className="mb-4">Agrega un Libro, Give me Knowlege Baby</h2>
       <Form onSubmit={handleSubmit} >
 
       <FormGroup>
-          <Label>Usuario</Label>
+          <Label>Libro</Label>
           <Input 
             type="text"
-            id="userName"
-            name="inputUserName" 
-            placeholder="escriba su nombre de usuario"
-            value={userName}
+            id="nombreLibro"
+            name="InputNombreLibro" 
+            placeholder="escriba el nombre del libro"
+            value={nombreLibro}
             onChange={handleInput} />
         </FormGroup>
         <FormGroup>
-          <Label>Nombre</Label>
+          <Label>Autor</Label>
           <Input 
             type="text"
-            id="firstName"
-            name="inputFirstName" 
-            placeholder="escriba su nombre"
-            value={firstName}
+            id="autorLibro"
+            name="inputAutorLibro" 
+            placeholder="escriba el autor del libro"
+            value={autorLibro}
             onChange={handleInput} />
         </FormGroup>
         <FormGroup>
-          <Label>Apellido</Label>
+          <Label>Categoria</Label>
           <Input
             type="text" 
-            name="lastName" 
-            id="inputLastname" 
-            placeholder="escriba su apellido"
-            value={lastName}
+            name="categoriaLibro" 
+            id="inputCategoriaLibro" 
+            placeholder="escriba la categoria del libro"
+            value={categoriaLibro}
             onChange={handleInput} />
         </FormGroup>
         <FormGroup>
-          <Label>Email</Label>
+          <Label>Descripción</Label>
           <Input
-            type="email"
-            name="email"
-            id="exampleEmail"
-            placeholder="escriba su email"
-            value={email}
+            type="text"
+            name="descripcionLibro"
+            id="inputDescripcionLibro"
+            placeholder="escriba la descripcion del libro"
+            value={descripcionLibro}
             onChange={handleInput} />
         </FormGroup>
         <FormGroup>
-          <Label>Clave</Label>
+          <Label>Año Publicacion</Label>
           <Input 
-            type="password"
-            name="password"
-            id="examplePassword"
-            placeholder="escriba su clave" 
-            value={password}
+            type="text"
+            name="fechaPublicacion"
+            id="inputFechaPublicacion"
+            placeholder="escriba el año publicacion del libro" 
+            value={fechaPublicacion}
             onChange={handleInput} />
         </FormGroup>
         <Button>Enviar</Button>
