@@ -48,7 +48,7 @@ const Signup = () => {
       password,
     }
     try {
-      const res = await axios.post('https://bonini81-backend.herokuapp.com/api/v1/users/signup', jsonSend);
+      const res = await axios.post('https://ebooks-backend.herokuapp.com/api/v1/users/signup', jsonSend);
       alert('Successful signup')
     } catch (error) {
       alert('Error on signup')
@@ -58,7 +58,7 @@ const Signup = () => {
   return (
     <React.Fragment>
       <section className="form-signup">
-      <h1 className="mb-4">Registrese</h1>
+      <h1 className="mb-4">Registro VIP</h1>
       <Form onSubmit={handleSubmit} >
 
       <FormGroup>
