@@ -1,8 +1,20 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import Home from '../../views/Home';
-import Signup from '../../views/Signup';
-import Barranav from '../Barranav';
+import { Link } from 'react-router-dom';
+import { FaUpload, FaSignInAlt, FaHome, FaFileSignature } from 'react-icons/fa';
+
+
+import {
+ Collapse,
+ Navbar,
+ NavbarToggler,
+ NavbarBrand,
+ Nav,
+ NavItem,
+ NavLink,
+} from 'reactstrap';
+
+
+
 
 const Navigation = () => {
     
@@ -10,9 +22,30 @@ const Navigation = () => {
 
 <React.Fragment>
 
+<Navbar className="navbar navbar-dark bg-dark" expand="md">
+      <NavbarBrand tag={Link} to="/">Bonini81 E-books</NavbarBrand>
 
-<Route exact path="/home" component={ Home } ></Route>
-<Route exact path="/signup" component={ Signup } ></Route>
+        <Nav className="mr-auto" navbar>
+          <NavItem>
+            <NavLink tag={Link} to="/"><FaSignInAlt /> Login</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink tag={Link} to="/home"><FaHome /> Home</NavLink>
+          </NavItem>
+
+          <NavItem>
+            <NavLink tag={Link} to="/upebook"><FaUpload /> Upload Ebook</NavLink>
+          </NavItem>
+
+          <NavItem>
+            <NavLink tag={Link} to="/signup"><FaFileSignature /> Sign Up</NavLink>
+          </NavItem>
+
+     
+
+        </Nav>
+      
+    </Navbar>
 
 </React.Fragment>
 

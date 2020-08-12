@@ -2,9 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import Barranav from './components/Barranav';
-import Navigation from './components/Navigation/';
-import Nonavigation from './components/Nonavigation/';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer/';
+
 // Views
 import Login from './views/Login';
 import Signup from './views/Signup';
@@ -23,14 +23,15 @@ function App() {
     <React.Fragment>
       <Router>
       
-     
+     <Navigation />
           <Switch> 
     
             { Routes }
          
 
           </Switch>
-        
+          
+        <Footer />
 
 
       </Router>
