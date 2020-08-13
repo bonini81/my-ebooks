@@ -14,6 +14,7 @@ const Signup = () => {
   const [categoriaLibro, setCategoriaLibro] = useState('');
   const [descripcionLibro, setDescripcionLibro] = useState('');
   const [fechaPublicacion, setFechaPublicacion] = useState('');
+  const [ebookUp, setEbookUp] = useState('');
   const [email, setEmail] = useState('');
   
 
@@ -35,6 +36,9 @@ const Signup = () => {
       case "fechaPublicacion":
         setFechaPublicacion(e.target.value)
         break;
+        case "ebookUp":
+          setEbookUp(e.target.value)
+          break;
      
       default:
         break;
@@ -49,6 +53,7 @@ const Signup = () => {
       categoria_libro: categoriaLibro,
       descripcion_libro: descripcionLibro,
       fecha_publicacion: fechaPublicacion,
+      ebook_up: ebookUp,
       email,
     
     }
@@ -99,7 +104,7 @@ const Signup = () => {
         <FormGroup>
           <Label>Descripción</Label>
           <Input
-            type="text"
+            type="textarea"
             name="descripcionLibro"
             id="inputDescripcionLibro"
             placeholder="escriba la descripcion del libro"
@@ -116,6 +121,15 @@ const Signup = () => {
             value={fechaPublicacion}
             onChange={handleInput} />
         </FormGroup>
+
+        <FormGroup>
+        <Label for="exampleFile">Sube el Ebook Madafaka</Label>
+        <Input 
+        type="file" name="ebookUp" 
+        id="InputEbookUp"  value={ebookUp} 
+        onChange={handleInput} />
+      </FormGroup>
+
         <Button>Enviar</Button>
       </Form>
       </section>
