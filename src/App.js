@@ -9,6 +9,8 @@ import Footer from './components/Footer/';
 import Login from './views/Login';
 import Signup from './views/Signup';
 
+//Context
+import AuthContextProvider from './contexts/AuthContext';
 
 
 
@@ -22,17 +24,18 @@ function App() {
 
     <React.Fragment>
       <Router>
-      
-     <Navigation />
+      <AuthContextProvider>
+      <Navigation />
+
           <Switch> 
     
             { Routes }
          
-
           </Switch>
           
         <Footer />
 
+      </AuthContextProvider>
 
       </Router>
       </React.Fragment>
