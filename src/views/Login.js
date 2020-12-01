@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GiPirateFlag } from "react-icons/gi";
 import axios from 'axios';
 
 import {
@@ -40,29 +41,34 @@ const Login = () => {
 
 
   const handleSubmit = async (e) => {
+    //localStorage.removeItem('token');
     e.preventDefault();
+   
+
     const jsonSend = {
       
       email,
       password
     
     }
-    try {
-      const res = await axios.post('https://bonini81-backend.herokuapp.com/api/v1/users/login', jsonSend);
-      window.location.href = '/home';
-      console.log('Successful Login');
+    try { 
+      const res = await axios.post('https://ebooks-backend.herokuapp.com/api/v1/users/login', jsonSend);
+      console.log(res.data);
+      localStorage.setItem('token', res.data.token);
+      alert('Welcome my madafaka!');
 
     } catch (error) {
       alert('Fuck off madafaka!');
-      console.log('Fatal Error');
+      console.log('Fatal Error Baby');
     }
-  }
+  };
 
     return ( 
         
         <React.Fragment>
       <div className="estilos-formulario">
       <Form onSubmit={handleSubmit} className="form-signin">
+        <h2 className="logo-login"><GiPirateFlag-2x /></h2>
       <h1>Login to MyLinks</h1>
       <FormGroup>
           <Label>Email</Label>

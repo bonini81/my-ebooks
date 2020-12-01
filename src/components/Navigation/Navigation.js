@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaUpload, FaSignInAlt, FaHome, FaFileSignature } from 'react-icons/fa';
-import { BsLightningFill } from "react-icons/bs";
+import { GiPirateFlag } from "react-icons/gi";
 
 import {
  Collapse,
@@ -12,19 +12,28 @@ import {
  NavItem,
  NavLink,
 } from 'reactstrap';
+import { render } from 'react-dom';
 
 
 
 
-const Navigation = () => {
-    
-    return ( 
+const Navigation = (props) => {
 
-<React.Fragment>
+const [isOpen, setIsOpen] = useState(false);
+const token = localStorage.getItem("token");
+console.log("Got the token, you are in my man.", token);
 
-<Navbar className="navbar navbar-dark bg-dark" expand="md">
-      <NavbarBrand tag={Link} to="/"><BsLightningFill /> Bonini81 E-books</NavbarBrand>
+const toggle = () => setIsOpen(!isOpen);
 
+
+  const renderNavigation = () => {
+
+  return token ? (<Navbar 
+    className="navbar navbar-dark bg-dark"  expand="md">
+
+      <NavbarBrand tag={Link} to="/"><GiPirateFlag /> Bonini81 E-books</NavbarBrand>
+      <NavbarToggler onClick={toggle} />
+      <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           <NavItem>
             <NavLink tag={Link} to="/"><FaSignInAlt /> Login</NavLink>
@@ -41,18 +50,44 @@ const Navigation = () => {
             <NavLink tag={Link} to="/signup"><FaFileSignature /> Sign Up</NavLink>
           </NavItem>
 
-     
+        </Nav>
+        </Collapse>
+    </Navbar>)
+
+    : ( <Navbar 
+    className="navbar navbar-dark bg-dark"  expand="md">
+
+      <NavbarBrand tag={Link} to="/"><GiPirateFlag /> Bonini81 E-books</NavbarBrand>
+      <NavbarToggler onClick={toggle} />
+      <Collapse isOpen={isOpen} navbar>
+        <Nav className="mr-auto" navbar>
+          <NavItem>
+            <NavLink tag={Link} to="/"><FaSignInAlt /> Logout</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink tag={Link} to="/home"><FaHome /> Home</NavLink>
+          </NavItem>
+
+          <NavItem>
+            <NavLink tag={Link} to="/upebook"><FaUpload /> Upload Ebook</NavLink>
+          </NavItem>
+
+          <NavItem>
+            <NavLink tag={Link} to="/signup"><FaFileSignature /> Sign Up</NavLink>
+          </NavItem>
 
         </Nav>
-      
-    </Navbar>
-
-</React.Fragment>
-
-     );
-
-
-
+        </Collapse>
+    </Navbar> )     
 }
  
+ return (
+<React.Fragment>
+  { renderNavigation() }
+</React.Fragment>
+
+ );
+
+}
+
 export default Navigation;

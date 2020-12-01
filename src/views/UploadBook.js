@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { BsLightningFill } from "react-icons/bs";
 import {
   Button,  
   Form,  
@@ -68,7 +69,7 @@ const Signup = () => {
   return (
     <React.Fragment>
       <section className="form-signup">
-      <h2 className="mb-4">Agrega un Libro, Give me Knowlege Baby</h2>
+      <h2 className="mb-4"><BsLightningFill />Agrega un Libro, Give me Knowlege Baby</h2>
       <Form onSubmit={handleSubmit} >
 
       <FormGroup>

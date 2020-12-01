@@ -1,7 +1,7 @@
 # 0. Me quede En:
 
-16 de Junio 2020: falta instalar react router dom?
-
+27 Noviembre de Junio 2020: 
+Minuto 58 VIDEO Black belt # 13
 
 
 # 1. ShortCuts
@@ -19,4 +19,10 @@ export default;
 
 # 2. Git Commands
 
+
+# 3. Users Data:
+
+bonini81
+andresdominguez81@gmail.com
+madafaka1
 
