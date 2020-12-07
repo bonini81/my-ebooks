@@ -55,7 +55,6 @@ const Login = () => {
     }
     try { 
       const res = await axios.post('https://ebooks-backend.herokuapp.com/api/v1/users/login', jsonSend);
-      console.log(res.data);
       setToken(res.data.token);
       //localStorage.setItem('token', res.data.token);
       alert('Welcome my madafaka!');

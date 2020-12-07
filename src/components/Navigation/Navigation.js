@@ -38,7 +38,7 @@ const toggle = () => setIsOpen(!isOpen);
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink tag={Link} to="/"><FaSignInAlt /> Logout</NavLink>
+            <NavLink tag={Link} to="/logout"><FaSignInAlt /> Logout</NavLink>
           </NavItem>
           <NavItem>
             <NavLink tag={Link} to="/home"><FaHome /> Home</NavLink>
