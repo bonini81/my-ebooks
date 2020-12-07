@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AuthContext } from '../contexts/AuthContext';
 import { GiPirateFlag } from "react-icons/gi";
 import axios from 'axios';
 
@@ -16,6 +17,7 @@ const Login = () => {
 
       //Desestructuracion de un array en este caso
 
+  const { setToken } = useContext( AuthContext ); 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -54,7 +56,8 @@ const Login = () => {
     try { 
       const res = await axios.post('https://ebooks-backend.herokuapp.com/api/v1/users/login', jsonSend);
       console.log(res.data);
-      localStorage.setItem('token', res.data.token);
+      setToken(res.data.token);
+      //localStorage.setItem('token', res.data.token);
       alert('Welcome my madafaka!');
 
     } catch (error) {
