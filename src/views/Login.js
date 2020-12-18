@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { GiPirateFlag } from "react-icons/gi";
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import {
@@ -13,14 +14,14 @@ import {
 
 
 const Login = () => {
-
+  
 
       //Desestructuracion de un array en este caso
 
   const { setToken } = useContext( AuthContext ); 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const history = useHistory();
 
 
   const handleInput = (e) => {
@@ -58,6 +59,9 @@ const Login = () => {
       setToken(res.data.token);
       //localStorage.setItem('token', res.data.token);
       alert('Welcome my madafaka!');
+   
+      history.push('/home');
+
 
     } catch (error) {
       alert('Fuck off madafaka!');
