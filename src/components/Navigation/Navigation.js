@@ -9,7 +9,7 @@ import {
  Collapse,
  Navbar,
  NavbarToggler,
- NavbarBrand,
+ NavbarBrand, 
  Nav,
  NavItem,
  NavLink,
@@ -20,9 +20,10 @@ import {
 
 
 const Navigation = () => {
-const { color, isAuth } = useContext(AuthContext);
-const [isOpen, setIsOpen] = useState(false);
-
+const { color, isAuth, getToken } = useContext(AuthContext);
+const [isOpen, setIsOpen] = useState(false); 
+const token = getToken();
+console.log(token);
 
 const toggle = () => setIsOpen(!isOpen);
 

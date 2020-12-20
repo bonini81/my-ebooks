@@ -1,6 +1,5 @@
 import React, { createContext, useState }  from 'react';
 
-
 export const AuthContext = createContext();
 
 
@@ -22,9 +21,16 @@ const removeToken = () => {
     setAuth(false);
 }
 
+
+const getToken = () => {
+
+    return localStorage.getItem('token');
+
+} 
+
     return ( 
         <AuthContext.Provider value={ { 
-            color: "red", isAuth, setToken, removeToken
+            color: "red", isAuth, getToken, setToken, removeToken
             }}>
 
             { props.children }

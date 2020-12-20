@@ -1,7 +1,7 @@
 # 0. Me quede En:
 
 27 Noviembre de Junio 2020: 
-Minuto 2h:16 VIDEO Black belt # 13
+Minuto 2h:23 VIDEO Black belt # 13
 
 
 # 1. ShortCuts
