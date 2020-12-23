@@ -18,7 +18,7 @@ const Login = () => {
 
       //Desestructuracion de un array en este caso
 
-  const { setToken } = useContext( AuthContext ); 
+  const { isAuth, setTokenAndLogin } = useContext( AuthContext ); 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory();
@@ -56,7 +56,7 @@ const Login = () => {
     }
     try { 
       const res = await axios.post('https://ebooks-backend.herokuapp.com/api/v1/users/login', jsonSend);
-      setToken(res.data.token);
+      setTokenAndLogin(res.data.token);
       //localStorage.setItem('token', res.data.token);
       alert('Welcome my madafaka!');
    

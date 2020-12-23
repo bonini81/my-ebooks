@@ -1,4 +1,5 @@
-import React, { createContext, useState }  from 'react';
+import React, { createContext, useState, useEffect }  from 'react';
+import { useHistory } from 'react-router-dom';
 
 export const AuthContext = createContext();
 
@@ -8,18 +9,8 @@ export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
 
+const history = useHistory();
 const [ isAuth, setAuth ] = useState(false); 
-
-const setToken = (token) => {
-    localStorage.setItem('token', token);
-    setAuth(true);
-}
-
-
-const removeToken = () => {
-    localStorage.removeItem('token');
-    setAuth(false);
-}
 
 
 const getToken = () => {
@@ -28,9 +19,28 @@ const getToken = () => {
 
 } 
 
+
+useEffect(() => {
+    if (getToken() ) setAuth(true);
+    }, [])
+
+const setTokenAndLogin = (token) => {
+
+    localStorage.setItem('token', token);
+    setAuth(true);
+    return history.push('/home');
+
+}
+
+
+const removeTokenAndLogout = () => {
+    localStorage.removeItem('token');
+    setAuth(false);
+}
+
     return ( 
         <AuthContext.Provider value={ { 
-            color: "red", isAuth, getToken, setToken, removeToken
+            color: "red", isAuth, getToken, setTokenAndLogin, removeTokenAndLogout
             }}>
 
             { props.children }
