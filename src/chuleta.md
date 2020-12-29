@@ -1,7 +1,7 @@
 # 0. Me quede En:
 
 22 Diciembre de Diciembre 2020: 
-Minuto 00:13 VIDEO Black belt # 15
+Minuto 00:27 VIDEO Black belt # 15
 
 
 # 1. ShortCuts

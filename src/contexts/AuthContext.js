@@ -19,10 +19,11 @@ const getToken = () => {
 
 } 
 
-
+// Clave usar UseEffect para usar el Context en el Login y Logout es el equivalente al ComponentdidMount cuando se usaban clases
+// Y para que funcione correctamente el cambio de Login y Logout
 useEffect(() => {
     if (getToken() ) setAuth(true);
-    }, [])
+    }, []);
 
 const setTokenAndLogin = (token) => {
 
