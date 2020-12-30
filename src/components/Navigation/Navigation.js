@@ -16,10 +16,8 @@ import {
 } from 'reactstrap';
 
 
-
-
-
 const Navigation = () => {
+
 const { color, isAuth, getToken } = useContext(AuthContext);
 const [isOpen, setIsOpen] = useState(false); 
 const token = getToken();
@@ -27,37 +25,9 @@ console.log(token);
 
 const toggle = () => setIsOpen(!isOpen);
 
+const publicNavbar = () => {
 
-  const renderNavigation = () => {
-
-  return isAuth 
-  ? (<Navbar 
-    className="navbar navbar-dark bg-dark"  expand="md">
-
-      <NavbarBrand tag={Link} to="/"> { color } <GiPirateFlag /> Bonini81 E-books</NavbarBrand>
-      <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={isOpen} navbar>
-        <Nav className="mr-auto" navbar>
-          <NavItem>
-            <NavLink tag={Link} to="/logout"><FaSignInAlt /> Logout</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink tag={Link} to="/home"><FaHome /> Home</NavLink>
-          </NavItem>
-
-          <NavItem>
-            <NavLink tag={Link} to="/upebook"><FaUpload /> Upload Ebook</NavLink>
-          </NavItem>
-
-          <NavItem>
-            <NavLink tag={Link} to="/signup"><FaFileSignature /> Sign Up</NavLink>
-          </NavItem>
-
-        </Nav>
-        </Collapse>
-    </Navbar>)
-
-    : ( <Navbar 
+  return ( <Navbar 
     className="navbar navbar-dark bg-dark"  expand="md">
 
       <NavbarBrand tag={Link} to="/">{color} <GiPirateFlag /> Bonini81 E-books</NavbarBrand>
@@ -71,7 +41,47 @@ const toggle = () => setIsOpen(!isOpen);
 
         </Nav>
         </Collapse>
-    </Navbar> )     
+    </Navbar> )  
+
+}
+
+const authNavbar = () => {
+
+  return (<Navbar 
+      className="navbar navbar-dark bg-dark"  expand="md">
+  
+        <NavbarBrand tag={Link} to="/"> { color } <GiPirateFlag /> Bonini81 E-books</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <NavLink tag={Link} to="/logout"><FaSignInAlt /> Logout</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={Link} to="/home"><FaHome /> Home</NavLink>
+            </NavItem>
+  
+            <NavItem>
+              <NavLink tag={Link} to="/upebook"><FaUpload /> Upload Ebook</NavLink>
+            </NavItem>
+  
+            <NavItem>
+              <NavLink tag={Link} to="/signup"><FaFileSignature /> Sign Up</NavLink>
+            </NavItem>
+  
+          </Nav>
+          </Collapse>
+      </Navbar>)
+}
+
+
+  const renderNavigation = () => {
+
+    return isAuth
+  ? authNavbar()
+
+    : publicNavbar() 
+
 }
  
  return (

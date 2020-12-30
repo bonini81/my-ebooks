@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthContext';
 import axios from 'axios';
 import {
   Button,  
@@ -8,12 +10,20 @@ import {
   Input,
 } from 'reactstrap';
 
+
 const Signup = () => {
+
+  const { isAuth, setTokenAndLogin } = useContext(AuthContext);
+  
+
   const [userName, setUserName] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  //If no token or sign in, fuck off, gents!
+  if (!isAuth) return ( <Redirect to="/" /> ); 
 
   const handleInput = (e) => {
     switch (e.target.name) {
