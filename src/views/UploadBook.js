@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useContext, useState } from 'react';
+import { AuthContext } from '../contexts/AuthContext';
+//import axios from 'axios';
 import { BsLightningFill } from "react-icons/bs";
 import {
   Button,  
@@ -9,20 +10,23 @@ import {
   Input,
 } from 'reactstrap';
 
-const Signup = () => {
+const UploadBook = () => {
+
+  const { isAuth, axiosInstance }  = useContext(AuthContext);
+
   const [nombreLibro, setNombreLibro] = useState('');
   const [autorLibro, setAutorLibro] = useState('');
   const [categoriaLibro, setCategoriaLibro] = useState('');
   const [descripcionLibro, setDescripcionLibro] = useState('');
   const [fechaPublicacion, setFechaPublicacion] = useState('');
-  const [ebookUp, setEbookUp] = useState('');
-  const [email, setEmail] = useState('');
+  const [urlLibro, setEbookUp] = useState('');
+
   
 
   const handleInput = (e) => {
     switch (e.target.name) {
 
-      case "InputNombreLibro":
+      case "inputNombreLibro":
         setNombreLibro(e.target.value)
         break;
       case "inputAutorLibro":
@@ -37,7 +41,7 @@ const Signup = () => {
       case "fechaPublicacion":
         setFechaPublicacion(e.target.value)
         break;
-        case "ebookUp":
+        case "urlLibro":
           setEbookUp(e.target.value)
           break;
      
@@ -49,20 +53,19 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const jsonSend = {
-      nombre_libro: nombreLibro,
-      autor_libro: autorLibro,
-      categoria_libro: categoriaLibro,
-      descripcion_libro: descripcionLibro,
-      fecha_publicacion: fechaPublicacion,
-      ebook_up: ebookUp,
-      email,
-    
+      book_title: nombreLibro,
+      book_author: autorLibro,
+      book_category: categoriaLibro,
+      book_description: descripcionLibro,
+      book_year: fechaPublicacion,
+      book_url: urlLibro,
     }
+
     try {
-      const res = await axios.post('https://ebooks-backend.herokuapp.com/api/v1/users/signup', jsonSend);
-      alert('Successful signup')
+      const res = await axiosInstance.post('/api/v1/libros', jsonSend);
+      alert('Libro agregado con éxito!')
     } catch (error) {
-      alert('Error on signup')
+      alert('Error al agregar el libro.')
     }
   }
 
@@ -77,7 +80,7 @@ const Signup = () => {
           <Input 
             type="text"
             id="nombreLibro"
-            name="InputNombreLibro" 
+            name="inputNombreLibro" 
             placeholder="escriba el nombre del libro"
             value={nombreLibro}
             onChange={handleInput} />
@@ -115,7 +118,7 @@ const Signup = () => {
         <FormGroup>
           <Label>Año Publicacion</Label>
           <Input 
-            type="text"
+            type="number"
             name="fechaPublicacion"
             id="inputFechaPublicacion"
             placeholder="escriba el año publicacion del libro" 
@@ -124,12 +127,15 @@ const Signup = () => {
         </FormGroup>
 
         <FormGroup>
-        <Label for="exampleFile">Sube el Ebook Madafaka</Label>
-        <Input 
-        type="file" name="ebookUp" 
-        id="InputEbookUp"  value={ebookUp} 
-        onChange={handleInput} />
-      </FormGroup>
+          <Label>URL Libro</Label>
+          <Input 
+            type="text"
+            id="inputUrlLibro"
+            name="urlLibro" 
+            placeholder="escriba el nombre del libro"
+            value={urlLibro}
+            onChange={handleInput} />
+        </FormGroup>
 
         <Button>Enviar</Button>
       </Form>
@@ -138,4 +144,4 @@ const Signup = () => {
   );
 }
  
-export default Signup;
+export default UploadBook;

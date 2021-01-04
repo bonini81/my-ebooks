@@ -1,7 +1,11 @@
 # 0. Me quede En:
 
 22 Diciembre de Diciembre 2020: 
-Minuto 00:50 VIDEO Black belt # 15
+Minuto 1h14:30 VIDEO Black belt # 15
+react js error CORS axios post request block cause not CORS header
+
+https://nabil6391.medium.com/avoid-cors-requests-for-a-react-app-2988e0061c1a
+https://stackoverflow.com/questions/44738078/node-js-cors-request-header-field-authorization-is-not-allowed-by-access-con
 
 
 # 1. ShortCuts

@@ -20,6 +20,7 @@ const Signup = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [profilePic, setProfilePic] = useState('');
   const [password, setPassword] = useState('');
 
   //If no token or sign in, fuck off, gents!
@@ -43,6 +44,10 @@ const Signup = () => {
       case "password":
         setPassword(e.target.value)
         break;
+        case "profilePic":
+          setPassword(e.target.value)
+          break;
+
       default:
         break;
     }
@@ -54,6 +59,8 @@ const Signup = () => {
       user_name: userName,
       first_name: firstName,
       last_name: lastName,
+      profile_pic: profilePic,
+
       email,
       password,
     }
@@ -121,6 +128,15 @@ const Signup = () => {
             value={password}
             onChange={handleInput} />
         </FormGroup>
+
+        <FormGroup>
+        <Label for="exampleFile">Sube el Profile Pic Madafaka</Label>
+        <Input 
+        type="file" name="profilePic" 
+        id="InputProfilePic"  value={profilePic} 
+        onChange={handleInput} />
+      </FormGroup>
+
         <Button>Enviar</Button>
       </Form>
       </section>
