@@ -11,7 +11,7 @@ const Footer = () => {
   <div className="row">
     
     <div className="col-12 col-md">
-     <p className="piepag-parrafo">&copy;2020 Bonini81 - MyEbooks</p>
+     <p className="piepag-parrafo">&copy;2020 Bonini81 - MyEbooks.</p>
     
     </div>
       

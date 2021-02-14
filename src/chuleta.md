@@ -1,5 +1,11 @@
 # 0. Me quede En:
 
+https://www.youtube.com/watch?v=Rw_QeJLnCK4
+
+# Chuleta Tests
+comando para hacer tests: npm run test
+
+
 22 Diciembre de Diciembre 2020: 
 Minuto 1h14:30 VIDEO Black belt # 15
 react js error CORS axios post request block cause not CORS header
@@ -26,7 +32,11 @@ export default;
 
 # 3. Users Data:
 
-bonini81
-andresdominguez81@gmail.com
-madafaka1
+1.
+ "email": "pedo1@gmail.com",
+    "password": "pedo"
 
+2.
+user: multer
+email: multer1@gmail.com
+pass: ssdfsdfdf

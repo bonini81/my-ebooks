@@ -10,7 +10,6 @@ import {
   Input,
 } from 'reactstrap';
 
-
 const Signup = () => {
 
   const { isAuth, setTokenAndLogin } = useContext(AuthContext);
@@ -45,27 +44,31 @@ const Signup = () => {
         setPassword(e.target.value)
         break;
         case "profilePic":
-          setPassword(e.target.value)
+          setProfilePic(e.target.value)
           break;
 
       default:
         break;
+
     }
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     const jsonSend = {
       user_name: userName,
       first_name: firstName,
       last_name: lastName,
-      profile_pic: profilePic,
-
+      profile_img: profilePic,
       email,
       password,
     }
+
+    
+
     try {
-      const res = await axios.post('https://ebooks-backend.herokuapp.com/api/v1/users/signup', jsonSend);
+      const res = await axios.post('https://ebooks-backend.herokuapp.com/api/v1/users/signup',  jsonSend );
       alert('Successful signup')
     } catch (error) {
       alert('Error on signup')
@@ -76,7 +79,7 @@ const Signup = () => {
     <React.Fragment>
       <section className="form-signup">
       <h1 className="mb-4">Registro VIP</h1>
-      <Form onSubmit={handleSubmit} >
+      <Form onSubmit={handleSubmit} enctype="multipart/form-data">
 
       <FormGroup>
           <Label>Usuario</Label>
@@ -129,13 +132,24 @@ const Signup = () => {
             onChange={handleInput} />
         </FormGroup>
 
-        <FormGroup>
+       
+       {/** <FormGroup>
+        <Label for="exampleFile">Sube el Profile Pic Madafaka</Label>
+        <Input 
+        type="file" name="profilePic" 
+        id="InputProfilePic"  value={profilePic} 
+        onChange={handleInput} />
+      </FormGroup>**/} 
+
+
+      <FormGroup>
         <Label for="exampleFile">Sube el Profile Pic Madafaka</Label>
         <Input 
         type="file" name="profilePic" 
         id="InputProfilePic"  value={profilePic} 
         onChange={handleInput} />
       </FormGroup>
+
 
         <Button>Enviar</Button>
       </Form>

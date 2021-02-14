@@ -46,7 +46,7 @@ const UploadBook = () => {
           setEbookUp(e.target.value)
           break;
      
-         case "bookPic":
+          case "bookPic":
             setBookPic(e.target.value)
             break;
 
@@ -145,14 +145,14 @@ const UploadBook = () => {
             onChange={handleInput} />
         </FormGroup>
 
-        <FormGroup>
+        
+      <FormGroup>
         <Label for="exampleFile">Sube el Pic del Libro</Label>
         <Input 
         type="file" name="bookPic" 
         id="InputBookPic"  value={bookPic} 
         onChange={handleInput} />
       </FormGroup>
- 
 
         <Button>Enviar</Button>
       </Form>

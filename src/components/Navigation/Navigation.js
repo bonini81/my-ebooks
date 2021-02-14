@@ -18,7 +18,7 @@ import {
 
 const Navigation = () => {
 
-const { color, isAuth, getToken } = useContext(AuthContext);
+const { isAuth, getToken } = useContext(AuthContext);
 const [isOpen, setIsOpen] = useState(false); 
 const token = getToken();
 console.log(token);
@@ -30,7 +30,7 @@ const publicNavbar = () => {
   return ( <Navbar 
     className="navbar navbar-dark bg-dark"  expand="md">
 
-      <NavbarBrand tag={Link} to="/">{color} <GiPirateFlag /> Bonini81 E-books</NavbarBrand>
+      <NavbarBrand tag={Link} to="/"> <GiPirateFlag /> Bonini81 E-books</NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
@@ -50,7 +50,7 @@ const authNavbar = () => {
   return (<Navbar 
       className="navbar navbar-dark bg-dark"  expand="md">
   
-        <NavbarBrand tag={Link} to="/"> { color } <GiPirateFlag /> Bonini81 E-books</NavbarBrand>
+        <NavbarBrand tag={Link} to="/"> <GiPirateFlag /> Bonini81 E-books</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -62,9 +62,13 @@ const authNavbar = () => {
             </NavItem>
   
             <NavItem>
-              <NavLink tag={Link} to="/upebook"><FaUpload /> Upload Ebook</NavLink>
+              <NavLink tag={Link} to="/upebook"><FaUpload />Ebook</NavLink>
             </NavItem>
-  
+
+            <NavItem>
+              <NavLink tag={Link} to="/upebook"><FaUpload />Upload Ebook Photo</NavLink>
+            </NavItem>
+
             <NavItem>
               <NavLink tag={Link} to="/signup"><FaFileSignature /> Sign Up</NavLink>
             </NavItem>

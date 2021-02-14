@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Snapshot Comprobar la UI del componente Footer sea siempre la misma Madafaka 1`] = `
+<footer
+  className="container-fluid piepag-adb"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-12 col-md"
+    >
+      <p
+        className="piepag-parrafo"
+      >
+        ©2020 Bonini81 - MyEbooks.
+      </p>
+    </div>
+  </div>
+</footer>
+`;
