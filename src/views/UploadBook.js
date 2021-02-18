@@ -55,6 +55,18 @@ const UploadBook = () => {
     }
   }
 
+  const formCleanup = () => {
+
+    setNombreLibro('');
+    setAutorLibro('');
+    setCategoriaLibro('');
+    setDescripcionLibro('');
+    setFechaPublicacion('');
+    setEbookUp('');
+    setBookPic('');
+
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const jsonSend = {
@@ -71,6 +83,8 @@ const UploadBook = () => {
 
     try {
       const res = await axiosInstance.post('/api/v1/libros', jsonSend);
+      //function para limpiar el formulario una vez que se envie
+      formCleanup();
       alert('Libro agregado con éxito!')
     } catch (error) {
       alert('Error al agregar el libro.')

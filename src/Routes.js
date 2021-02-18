@@ -9,6 +9,7 @@ import Logout from './views/Logout';
 import Home from './views/Home';
 import Signup from './views/Signup';
 import UploadBook from './views/UploadBook';
+import UploadPhotoBook from './views/UploadPhotoBook';
 
 
 
@@ -22,6 +23,7 @@ export default [
 <Route exact path="/logout" component={ Logout } ></Route>
 <Route exact path="/signup" component={ Signup } ></Route>
 <Route exact path="/upebook" component={ UploadBook } ></Route>
+<Route exact path="/updatebook" component={ UploadPhotoBook } ></Route>
 
 </React.Fragment>
 

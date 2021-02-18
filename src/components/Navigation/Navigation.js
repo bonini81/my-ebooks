@@ -66,7 +66,7 @@ const authNavbar = () => {
             </NavItem>
 
             <NavItem>
-              <NavLink tag={Link} to="/upebook"><FaUpload />Upload Ebook Photo</NavLink>
+              <NavLink tag={Link} to="/updatebook"><FaUpload />Upload Ebook Photo</NavLink>
             </NavItem>
 
             <NavItem>
