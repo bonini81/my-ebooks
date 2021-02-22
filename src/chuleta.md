@@ -7,7 +7,7 @@ comando para hacer tests: npm run test
 
 
 22 Diciembre de Diciembre 2020: 
-Minuto 1h17 VIDEO Black belt # 15
+Minuto 2h33 VIDEO Black belt # 15
 react js error CORS axios post request block cause not CORS header
 
 https://nabil6391.medium.com/avoid-cors-requests-for-a-react-app-2988e0061c1a

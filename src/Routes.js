@@ -10,8 +10,7 @@ import Home from './views/Home';
 import Signup from './views/Signup';
 import UploadBook from './views/UploadBook';
 import UploadPhotoBook from './views/UploadPhotoBook';
-
-
+import BooksList from './views/BooksList';
 
 
 export default [
@@ -24,6 +23,8 @@ export default [
 <Route exact path="/signup" component={ Signup } ></Route>
 <Route exact path="/upebook" component={ UploadBook } ></Route>
 <Route exact path="/updatebook" component={ UploadPhotoBook } ></Route>
+<Route exact path="/book-list" component={ BooksList } ></Route>
+
 
 </React.Fragment>
 
