@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { FaUpload, FaSignInAlt, FaHome, FaFileSignature } from 'react-icons/fa';
+import { FaUpload, FaSignInAlt, FaHome, FaFileSignature, FaBook, FaSkull } from 'react-icons/fa';
 import { GiPirateFlag } from "react-icons/gi";
 import { AuthContext } from '../../contexts/AuthContext';
 import { render } from 'react-dom';
@@ -30,7 +30,7 @@ const publicNavbar = () => {
   return ( <Navbar 
     className="navbar navbar-dark bg-dark"  expand="md">
 
-      <NavbarBrand tag={Link} to="/"> <GiPirateFlag /> Bonini81 E-books</NavbarBrand>
+      <NavbarBrand tag={Link} to="/"> <FaSkull /> Bonini81 E-books</NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
@@ -50,7 +50,7 @@ const authNavbar = () => {
   return (<Navbar 
       className="navbar navbar-dark bg-dark"  expand="md">
   
-        <NavbarBrand tag={Link} to="/"> <GiPirateFlag /> Bonini81 E-books</NavbarBrand>
+        <NavbarBrand tag={Link} to="/"> <FaSkull className="skullIcono" /> Bonini81 E-books</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -62,15 +62,11 @@ const authNavbar = () => {
             </NavItem>
 
             <NavItem>
-              <NavLink tag={Link} to="/book-list"><FaHome /> BooksList</NavLink>
+              <NavLink tag={Link} to="/book-list"><FaBook /> BooksList</NavLink>
             </NavItem>
 
             <NavItem>
               <NavLink tag={Link} to="/upebook"><FaUpload />Ebook</NavLink>
-            </NavItem>
-
-            <NavItem>
-              <NavLink tag={Link} to="/updatebook"><FaUpload />Upload Ebook Photo</NavLink>
             </NavItem>
 
             <NavItem>

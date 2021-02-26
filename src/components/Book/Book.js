@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { FaAngleDoubleRight } from 'react-icons/fa';
 
 
 import {
@@ -13,25 +13,25 @@ const Book = (props) => {
     return ( 
 
 <React.Fragment>
-  <div className="container">
-    <div className="row">
 
-    <div className="col-lg-3 estilo-cards-home">
+
+    <div className="col-lg-4 estilo-cards-home">
       <Card>
-        <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+        <CardImg top width="100%" src={ props.book_img } alt="Card image cap" />
         <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Button</Button>
+          <CardTitle className="bookTitle">{ props.book_title }</CardTitle>
+          <CardSubtitle className="bookAutor"> { props.book_author } | { props.book_year}</CardSubtitle>
+          <CardText>{ props.book_description}</CardText>
+          <CardText><FaAngleDoubleRight className="bookCategoryIcon" /> { props.book_category} </CardText>
+          
+          <a href={props.book_url} className="linkDownload" target="_blank">Descargar Libro</a>
         </CardBody>
       </Card>
       </div>
       
 
 
-      </div>
-    </div>
+  
 
 </React.Fragment>
 

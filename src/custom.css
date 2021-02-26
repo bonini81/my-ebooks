@@ -1,3 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize');
+
+body {
+    font-family: 'Electrolize', sans-serif;
+}
+
+
+/*** 
+1. Menu Links 
+***/
+
+
+.skullIcono {
+
+    color: #000;
+   
+}
+
+nav.navbar.bg-dark {
+
+    background-color: gray !important;
+    color: black !important;
+    
+
+}
+
+nav.navbar.bg-dark a {
+
+    color: #fff !important;
+    
+
+}
+
+.nav-item:hover {
+    background-color: #7350ff;
+    border-radius: 5px;
+}
+
 
 .piepag-adb {
 
@@ -6,6 +44,7 @@
     margin-top: 5%;
 
 }
+
 
 p.piepag-parrafo {
     
@@ -24,19 +63,6 @@ height: 50px;
       
 }
 
-nav.navbar.bg-dark {
-
-    background-color: gray !important;
-    color: black !important;
-    
-
-}
-
-nav.navbar.bg-dark a {
-
-    color: #fff !important;
-
-}
 
 
 button.btn-secondary {
@@ -66,4 +92,39 @@ button.btn-secondary {
 .logo-login {
 
     text-align: center;
+}
+
+
+.bookTitle {
+
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #000;
+}
+
+.bookAutor {
+    color: #333;
+    font-weight:500; 
+
+}
+
+.linkDownload {
+
+    background-color: #7350ff;
+box-shadow: 0 0 4px rgba(33,34,64,.08),0 2px 8px rgba(33,34,64,.16);
+color: #fff;
+padding: .5rem;
+
+}
+
+.bookCategoryIcon {
+
+    color: #7350ff;
+}
+
+.tituloLibros {
+
+    color: #7350ff;
+    font-weight: bold;
+
 }

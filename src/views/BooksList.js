@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
+import { Redirect } from 'react-router-dom';
 import Book from '../components/Book/Book.js';
+import { FaDatabase } from 'react-icons/fa';
 
 const BooksList = () => {
 
-const { axiosInstance } =  useContext(AuthContext);
+const { axiosInstance, isAuth } =  useContext(AuthContext);
 const [ books, setBooks ] = useState( [] );
 const [ text, setText ] = useState('Loading books...'); 
 
@@ -12,18 +14,20 @@ const getBooks = () =>  axiosInstance.get('/api/v1/libros');
 
 
 useEffect( () => {
-        
+
+  //  if (!isAuth) return ( <Redirect to="/" /> )
+
     getBooks()
     .then(( response ) => {
 
         const books = response.data;
         setBooks(books);
-        setText(`There is ${books.length} books available`);
+        setText(`Al momento hay ${books.length} libros disponbiles`);
 
     })
     .catch (() =>
  
-        setText(`There is no books available `)
+        setText(`No hay libros disponibles`)
         );
 
         //usefect fuciona al cargarse el componente y hay que poner los [] al final sino se vuelve una actualizacion infinita
@@ -36,14 +40,29 @@ useEffect( () => {
     return (
     <React.Fragment>
 
-    <h1>Mis Libros</h1>
-    { text }
+   
+    <div className="container">
+        <br/>
+    <h1 className="tituloLibros"><FaDatabase /> Mis Libros</h1>
+    <p>{ text }</p>
+          <div className="row">
     { books.map((book) => {
+         
         return <Book 
-        author={book.author}
-        title={book.title}
+        key={book._id}
+        book_author ={book.book_author}
+        book_title ={ book.book_title }
+        book_img = {book.book_img}
+        book_description = {book.book_description}
+        book_year = { book.book_year }
+        book_url = { book.book_url }
+        book_category = {book.book_category}
+
         />
+     
     })}
+       </div>
+        </div>
     </React.Fragment>
     );
 }

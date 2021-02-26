@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { createContext, useState, useEffect }  from 'react';
 import { useHistory } from 'react-router-dom';
+//import decode from 'jwt-decode';
 
 export const AuthContext = createContext();
 
@@ -27,6 +28,7 @@ const getToken = () => {
 // Clave usar UseEffect para usar el Context en el Login y Logout es el equivalente al ComponentdidMount cuando se usaban clases
 // Y para que funcione correctamente el cambio de Login y Logout
 useEffect(() => {
+    
     if (getToken() ) setAuth(true);
     }, []);
 
