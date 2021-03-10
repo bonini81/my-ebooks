@@ -10,7 +10,8 @@ const Footer = () => {
 
   <div className="row">
     
-    <div className="col-12 col-md">
+    <div className="col-12 col-md centro-alineacion">
+      
      <p className="piepag-parrafo">&copy;2020 Bonini81 - MyEbooks.</p>
     
     </div>
