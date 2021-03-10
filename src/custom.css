@@ -128,3 +128,19 @@ padding: .5rem;
     font-weight: bold;
 
 }
+
+
+h1.titulo-home {
+    margin: 32px 0px;
+    text-align: center;
+    color: #7350ff;
+    font-weight: bold;
+
+
+}
+
+.icon-1-home {
+
+    width: 120px;
+    height: 120px;
+}

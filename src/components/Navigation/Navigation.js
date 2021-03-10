@@ -72,6 +72,10 @@ const authNavbar = () => {
             <NavItem>
               <NavLink tag={Link} to="/signup"><FaFileSignature /> Sign Up</NavLink>
             </NavItem>
+
+            <NavItem>
+              <NavLink tag={Link} to="/profile"><FaFileSignature /> Profile</NavLink>
+            </NavItem>
   
           </Nav>
           </Collapse>

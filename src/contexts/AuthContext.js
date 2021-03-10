@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { createContext, useState, useEffect }  from 'react';
 import { useHistory } from 'react-router-dom';
-//import decode from 'jwt-decode';
+import decode from 'jwt-decode';
 
 export const AuthContext = createContext();
 
@@ -17,6 +17,9 @@ const AuthContextProvider = (props) => {
 
 const history = useHistory();
 const [ isAuth, setAuth ] = useState(false); 
+const [token, setToken] = useState(null);
+const [user, setUser] = useState(null);
+
 
 
 const getToken = () => {
@@ -29,7 +32,15 @@ const getToken = () => {
 // Y para que funcione correctamente el cambio de Login y Logout
 useEffect(() => {
     
-    if (getToken() ) setAuth(true);
+    const encodedToken = localStorage.getItem('token');
+
+    if (encodedToken) {
+        setAuth(true);
+        const decodedToken = decode(encodedToken);
+        setUser(decodedToken.data);
+        
+
+    } 
     }, []);
 
 const setTokenAndLogin = (token) => {
@@ -53,7 +64,7 @@ if (getToken()) {
 
     return ( 
         <AuthContext.Provider value={ { 
-            color: "red", isAuth, getToken, setTokenAndLogin, removeTokenAndLogout, axiosInstance
+            color: "red", isAuth, getToken, setTokenAndLogin, removeTokenAndLogout, axiosInstance, token, user
             }}>
 
             { props.children }

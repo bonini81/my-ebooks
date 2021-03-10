@@ -1,5 +1,9 @@
 # 0. Me quede En:
 
+Git repository from course:
+https://github.com/Masavi/cinta-negra-b40-frontend/
+
+
 https://www.youtube.com/watch?v=Rw_QeJLnCK4
 
 # Chuleta Tests
@@ -7,7 +11,9 @@ comando para hacer tests: npm run test
 
 
 22 Diciembre de Diciembre 2020: 
-Minuto 35 VIDEO Black belt # 16
+Minuto 2
+
+2:43 VIDEO Black belt # 16
 react js error CORS axios post request block cause not CORS header
 
 https://nabil6391.medium.com/avoid-cors-requests-for-a-react-app-2988e0061c1a
@@ -44,3 +50,14 @@ pass: ssdfsdfdf
 # Libreria para React Icons.
 
 https://react-icons.github.io/react-icons/icons?name=fa
+Color and size of icons: https://github.com/react-icons/react-icons/issues/67
+
+#Git Head
+https://stackoverflow.com/questions/19033709/understanding-detached-head-in-git#:~:text=A%20%E2%80%9Cdetached%20HEAD%E2%80%9D%20message%20in,commit%20rather%20than%20a%20branch.&text=As%20soon%20as%20you%20checkout,(because%20HEAD%20has%20moved)
+
+#Git checkout
+https://stackoverflow.com/questions/3601911/how-do-i-undo-a-checkout-in-git
+
+#Upload images article  (explicacion de video 16 black belt, 2h 25 minutos)
+
+https://codeburst.io/react-image-upload-with-kittens-cc96430eaece
