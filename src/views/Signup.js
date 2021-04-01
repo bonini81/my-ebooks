@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import axios from 'axios';
+import { FaUserPlus } from 'react-icons/fa';
 import {
   Button,  
   Form,  
@@ -78,7 +79,7 @@ const Signup = () => {
   return (
     <React.Fragment>
       <section className="form-signup">
-      <h1 className="mb-4">Registro VIP</h1>
+      <h1 className="mb-4 tituloLibros"><FaUserPlus /> Registro VIP</h1>
       <Form onSubmit={handleSubmit} enctype="multipart/form-data">
 
       <FormGroup>

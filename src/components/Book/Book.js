@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { FaAngleDoubleRight } from 'react-icons/fa';
-
-
 import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
 
+
+/*
+Book Component Doc
+This component is the single view card for books.
+
+*/ 
 
 const Book = (props) => {
 

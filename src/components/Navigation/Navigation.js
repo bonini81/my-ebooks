@@ -1,9 +1,11 @@
 import React, { useState, useContext } from 'react';
-import { FaUpload, FaSignInAlt, FaHome, FaFileSignature, FaBook, FaSkull } from 'react-icons/fa';
+import { FaUpload, FaSignInAlt, FaHome, FaFileSignature, FaBook, FaSkull, FaUserFriends } from 'react-icons/fa';
 import { GiPirateFlag } from "react-icons/gi";
 import { AuthContext } from '../../contexts/AuthContext';
 import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
+
+
 
 import {
  Collapse,
@@ -74,9 +76,13 @@ const authNavbar = () => {
             </NavItem>
 
             <NavItem>
-              <NavLink tag={Link} to="/profile"><FaFileSignature /> Profile</NavLink>
+              <NavLink tag={Link} to="/user-list"><FaUserFriends /> Users List</NavLink>
             </NavItem>
   
+            <NavItem>
+              <NavLink tag={Link} to="/profile"><FaFileSignature /> Profile</NavLink>
+            </NavItem>
+
           </Nav>
           </Collapse>
       </Navbar>)

@@ -94,7 +94,7 @@ const UploadBook = () => {
   return (
     <React.Fragment>
       <section className="form-signup">
-      <h2 className="mb-4"><BsLightningFill />Agrega un Libro, Give me Knowlege Baby</h2>
+      <h2 className="mb-4 tituloLibros"><BsLightningFill />Agrega un Libro, Give me Knowlege Baby</h2>
       <Form onSubmit={handleSubmit} >
 
       <FormGroup>

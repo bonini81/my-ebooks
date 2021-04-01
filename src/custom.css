@@ -131,7 +131,7 @@ padding: .5rem;
 
 h1.titulo-home {
 
-    margin: 5% 0px;
+    margin: 7% 0px;
     text-align: center;
     color: #7350ff;
     font-weight: bold;
@@ -169,4 +169,25 @@ h1.titulo-home {
 .center {
 
     text-align: center;
+}
+
+.bonini-styles > p  {
+
+    background: blanchedalmond;
+    border: 1px #000 solid;
+}
+
+.user-count {
+
+    color: #fff;
+    background-color: #7350ff;
+    padding-bottom: 0px;
+    padding: 7px;
+
+}
+
+.lista-users {
+
+    color: #000;
+
 }

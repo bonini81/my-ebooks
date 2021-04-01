@@ -9,6 +9,13 @@ import { FcRightDown } from "react-icons/fc";
 import { FcSportsMode } from "react-icons/fc";
 import { FaAngleRight } from 'react-icons/fa';
 
+
+/*
+Home View Documentation:
+This view display the main paths of the App, Book download area, user creation, etc.
+
+*/ 
+
 //import Book from '../components/Book/';
 //import '../custom.css';
 
