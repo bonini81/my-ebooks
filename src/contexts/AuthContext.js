@@ -64,6 +64,7 @@ if (getToken()) {
 
     return ( 
         <AuthContext.Provider value={ { 
+            
             color: "red", isAuth, getToken, setTokenAndLogin, removeTokenAndLogout, axiosInstance, token, user
             }}>
 

@@ -3,11 +3,14 @@ import { AuthContext } from '../contexts/AuthContext';
 import { Redirect } from 'react-router-dom';
 import Book from '../components/Book/Book.js';
 import { FaDatabase } from 'react-icons/fa';
+import  { BookContext } from '../contexts/BookContext';
 
 
 const BooksList = () => {
 
 const { axiosInstance, isAuth } =  useContext(AuthContext);
+const { favorite } =  useContext(BookContext);
+
 const [ books, setBooks ] = useState( [] );
 const [ text, setText ] = useState('Loading books...'); 
 
@@ -44,8 +47,8 @@ useEffect( () => {
    
     <div className="container">
         <br/>
-    <h1 className="tituloLibros"><FaDatabase /> Mis Libros</h1>
-    <p>{ text }</p>
+    <h1 className="tituloLibros"><FaDatabase /> { favorite } Mis Libros</h1>
+    <p>{ text }  </p>
           <div className="row">
     { books.map((book) => {
          

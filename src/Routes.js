@@ -14,6 +14,7 @@ import UploadPhotoBook from './views/UploadPhotoBook';
 import BooksList from './views/BooksList';
 import Profile from './views/Profile';
 
+import BookContextProvider from './contexts/BookContext';
 
 export default [
 
@@ -25,7 +26,9 @@ export default [
 <Route exact path="/signup" component={ Signup } ></Route>
 <Route exact path="/upebook" component={ UploadBook } ></Route>
 <Route exact path="/updatebook" component={ UploadPhotoBook } ></Route>
+<BookContextProvider>
 <Route exact path="/book-list" component={ BooksList } ></Route>
+</BookContextProvider>
 <Route exact path="/profile" component={ Profile } ></Route>
 <Route exact path="/user-list" component={ UserList } ></Route>
 

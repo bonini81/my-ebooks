@@ -44,14 +44,15 @@ const UserList = () => {
 
     <React.Fragment>
 
-<p className="flex-grow-1  text-center user-count">Al momento hay { text } <FaSkull /></p>
-
-<div className="d-flex justify-content-center bonini-styles">
+<p className="text-center user-count">Al momento hay { text } <FaSkull /></p>
 
 
-          <div className="row">
+<h1 className="text-center">Usuarios Activos</h1>
+<div className="d-flex flex-wrap flex-usuario-card">
+
+
     { users.map((user) => {
-         
+          
         return <User 
 
         key={user._id}
@@ -63,8 +64,7 @@ const UserList = () => {
         />
      
     })}
-</div>
-</div>
+</div> 
     </React.Fragment>
 
     );

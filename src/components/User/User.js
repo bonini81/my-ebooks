@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { FaSkull } from 'react-icons/fa';
 
 const User = (props) => {
 
@@ -7,14 +7,15 @@ const User = (props) => {
 
         <React.Fragment>
 
-
-
-  <div className="d-flex">
+<div className="bloque-user">
+<ul className="ul-lista-users">
+<li className="lista-users text-center"><FaSkull /></li>
+  <li className="lista-users"><strong>Username:</strong> { props.user_name } </li>   
+  <li className="lista-users"><strong>First Name:</strong> { props.first_name } </li> 
+  <li className="lista-users"><strong>Last Name:</strong> { props.last_name } </li> 
+  </ul>
+  </div>
       
-  <p className="lista-users"> { props.user_name } </p>   
-      
-  
-      </div>
         </React.Fragment>
     );
 

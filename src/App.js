@@ -13,17 +13,19 @@ import Signup from './views/Signup';
 import AuthContextProvider from './contexts/AuthContext';
 
 
-
-
 import { Container } from 'reactstrap';
 import Routes from './Routes';
 import './App.css';
+import UserNameContextProvider from './contexts/UserNameContext';
+
 
 function App() {
   return (
 
     <React.Fragment>
       <Router>
+      
+      <UserNameContextProvider>
       <AuthContextProvider>
       <Navigation />
 
@@ -36,7 +38,7 @@ function App() {
         <Footer />
 
       </AuthContextProvider>
-
+      </UserNameContextProvider>
       </Router>
       </React.Fragment>
   );
