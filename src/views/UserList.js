@@ -2,17 +2,17 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import User from '../components/User/User.js';
 import { FaSkull } from 'react-icons/fa';
-
-
+ 
 const UserList = () => {
 
 
     const { axiosInstance, isAuth } =  useContext(AuthContext);
+
     const [ users, setUsers ] = useState( [] );
     const [ text, setText ] = useState('Loading books...'); 
     
     const getUsers = () =>  axiosInstance.get('/api/v1/users');
-
+ 
 
     useEffect( () => {
 
@@ -44,7 +44,7 @@ const UserList = () => {
 
     <React.Fragment>
 
-<p className="text-center user-count">Al momento hay { text } <FaSkull /></p>
+<p className="text-center user-count">Al momento hay { text } <FaSkull /> </p>
 
 
 <h1 className="text-center">Usuarios Activos</h1>

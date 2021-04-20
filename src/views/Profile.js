@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../contexts/AuthContext';
+import { UserNameContext } from '../contexts/UserNameContext';
 
 const Profile = () =>  {
 
-    const { user } = useContext(AuthContext);
-    console.log(user);
+    const { username } =  useContext(UserNameContext);
+    console.log(username);
 
     const loading = () => {
 
@@ -14,13 +14,13 @@ const Profile = () =>  {
     const authProfile = () => {
         return (
         <React.Fragment>
-         <h1>Hola, {user.name}!</h1>
+         <h1>Hola, {username.name}!</h1>
         </React.Fragment>
         )
     }
 
 const verifyUser = () => {
-        return user 
+        return username 
         ? authProfile()
         : loading()
 

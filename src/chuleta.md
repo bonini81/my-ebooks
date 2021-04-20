@@ -11,7 +11,7 @@ comando para hacer tests: npm run test
 
 
 Video 13  Black Belt 4 de Abril
-minuto 2h:05
+minuto 2h:10
 
 https://nabil6391.medium.com/avoid-cors-requests-for-a-react-app-2988e0061c1a
 https://stackoverflow.com/questions/44738078/node-js-cors-request-header-field-authorization-is-not-allowed-by-access-con

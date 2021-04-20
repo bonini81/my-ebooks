@@ -4,7 +4,7 @@ import { GiPirateFlag } from "react-icons/gi";
 import { AuthContext } from '../../contexts/AuthContext';
 import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
-
+import { UserNameContext } from '../../contexts/UserNameContext';
 
 
 import {
@@ -21,6 +21,7 @@ import {
 const Navigation = () => {
 
 const { isAuth, getToken } = useContext(AuthContext);
+const { username } =  useContext(UserNameContext);
 const [isOpen, setIsOpen] = useState(false); 
 const token = getToken();
 console.log(token);
@@ -32,7 +33,7 @@ const publicNavbar = () => {
   return ( <Navbar 
     className="navbar navbar-dark bg-dark"  expand="md">
 
-      <NavbarBrand tag={Link} to="/"> <FaSkull /> Bonini81 E-books</NavbarBrand>
+      <NavbarBrand tag={Link} to="/"> <FaSkull /> Bonini81 E-books </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
@@ -52,7 +53,7 @@ const authNavbar = () => {
   return (<Navbar 
       className="navbar navbar-dark bg-dark"  expand="md">
   
-        <NavbarBrand tag={Link} to="/"> <FaSkull className="skullIcono" /> Bonini81 E-books</NavbarBrand>
+        <NavbarBrand tag={Link} to="/"> <FaSkull className="skullIcono" /> Bonini81 E-books. Hello, { username.name }.</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>

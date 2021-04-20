@@ -5,25 +5,31 @@ export const UserNameContext = createContext();
 
 const UserNameContextProvider = (props) => {
 
-    const [ username, setUsername ] = useState(null); 
+    const [ username, setUsername ] = useState('No name Madafaka'); 
+ 
 
-   const getUsername = () => {
 
-        const encodedToken = localStorage.getItem('token');
-        const decodedToken = decode(encodedToken);
-        setUsername(decodedToken.data);
-        console.log(username.user_name);
 
-   }
+   useEffect(() => {
+    
+    const encodedToken = localStorage.getItem('token');
+
+    if (encodedToken) {
   
+        const decodedToken = decode(encodedToken);
+         setUsername(decodedToken.data);
+        
 
+    } 
+    }, []);
+  
 
 
     return (
 
         <UserNameContext.Provider value={{ 
             
-            favorite: "Erick Elliott", getUsername
+         username, 
          }}>
         { props.children }
         </UserNameContext.Provider>
