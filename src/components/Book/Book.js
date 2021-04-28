@@ -7,9 +7,8 @@ import {
 
 
 /*
-Book Component Doc
-This component is the single view card for books.
-
+*Book Component Doc
+*This component is the single view card for books.
 */ 
 
 const Book = (props) => {
@@ -26,8 +25,7 @@ const Book = (props) => {
           <CardTitle className="bookTitle">{ props.book_title }</CardTitle>
           <CardSubtitle className="bookAutor"> { props.book_author } | { props.book_year}</CardSubtitle>
           <CardText>{ props.book_description}</CardText>
-          <CardText><FaAngleDoubleRight className="bookCategoryIcon" /> { props.book_category} </CardText>
-          
+          <CardText><FaAngleDoubleRight className="bookCategoryIcon" /> { props.book_category} </CardText> 
           <a href={props.book_url} className="linkDownload" target="_blank">Descargar Libro</a>
         </CardBody>
       </Card>

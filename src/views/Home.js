@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { FcReading } from "react-icons/fc";
 import { FcPortraitMode } from "react-icons/fc";
 import { FcUpload } from "react-icons/fc";
@@ -8,6 +8,8 @@ import { FcRight } from "react-icons/fc";
 import { FcRightDown } from "react-icons/fc";
 import { FcSportsMode } from "react-icons/fc";
 import { FaAngleRight } from 'react-icons/fa';
+
+import { BookContext } from '../contexts/BookContext';
 
 
 /*
@@ -21,7 +23,9 @@ This view display the main paths of the App, Book download area, user creation, 
 
 
 const Home = () => {
-    
+
+  const { libros, text } =  useContext(BookContext);
+  console.log("La consola te dice: ", text);
     return (  
 
               <React.Fragment>
@@ -36,8 +40,9 @@ const Home = () => {
         
           </a>
           <p className="link-home-text">Book Download Area <FaAngleRight /></p>
+          <p className="link-home-text">Book Counter: { text }</p>
         </div>
-
+        
         <div className="col-lg-3">
           <a href="/signup">
           <FcPortraitMode size={200} />

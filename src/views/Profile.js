@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { UserNameContext } from '../contexts/UserNameContext';
 
+
 const Profile = () =>  {
 
     const { username } =  useContext(UserNameContext);
-    console.log(username);
+
 
     const loading = () => {
 
@@ -14,7 +15,13 @@ const Profile = () =>  {
     const authProfile = () => {
         return (
         <React.Fragment>
-         <h1>Hola, {username.name}!</h1>
+        <div class="d-flex flex-column p-5">
+         <h2>Who is Online NOW?</h2>
+         <br />
+         <p><strong>Username:</strong> {username.name}</p>
+         <p><strong>Email:</strong> {username.email}</p>
+         <p><a href="#">Edit Username</a></p>
+         </div>
         </React.Fragment>
         )
     }

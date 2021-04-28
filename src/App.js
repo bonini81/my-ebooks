@@ -17,16 +17,19 @@ import { Container } from 'reactstrap';
 import Routes from './Routes';
 import './App.css';
 import UserNameContextProvider from './contexts/UserNameContext';
-
+import BookContextProvider from './contexts/BookContext';
+ 
 
 function App() {
   return (
 
+    <React.StrictMode>
     <React.Fragment>
       <Router>
-      
-      <UserNameContextProvider>
       <AuthContextProvider>
+      <BookContextProvider>
+      <UserNameContextProvider>
+     
       <Navigation />
 
           <Switch> 
@@ -37,10 +40,13 @@ function App() {
           
         <Footer />
 
-      </AuthContextProvider>
+  
       </UserNameContextProvider>
+      </BookContextProvider>
+      </AuthContextProvider>
       </Router>
       </React.Fragment>
+      </React.StrictMode>
   );
 
 }

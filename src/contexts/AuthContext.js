@@ -6,7 +6,10 @@ import decode from 'jwt-decode';
 export const AuthContext = createContext();
 
 const axiosInstance = axios.create ({
+
     baseURL: 'https://ebooks-backend.herokuapp.com'
+    
+
 });
 
 
@@ -28,8 +31,12 @@ const getToken = () => {
 
 } 
 
-// Clave usar UseEffect para usar el Context en el Login y Logout es el equivalente al ComponentdidMount cuando se usaban clases
-// Y para que funcione correctamente el cambio de Login y Logout
+/**
+ * Clave usar UseEffect para usar el Context en el Login y Logout es el equivalente al ComponentdidMount cuando se usaban
+* clases Y para que funcione correctamente el cambio de Login y Logout
+*  
+*/ 
+
 useEffect(() => {
     
     const encodedToken = localStorage.getItem('token');

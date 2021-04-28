@@ -30,9 +30,11 @@ const UserList = () => {
        
               setText(`No hay usuarios`)
               );
-      
-              //usefect fuciona al cargarse el componente y hay que poner los [] al final sino se vuelve una actualizacion infinita
-              // del componente. 
+
+              /**
+               * usefect fuciona al cargarse el componente y hay que poner los [] al final sino se vuelve una *actualizacion infinita del componente. 
+               * 
+               */
       
       }, [] )
 
