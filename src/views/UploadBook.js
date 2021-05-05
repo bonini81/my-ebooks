@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
-//import axios from 'axios';
+import { BookContext } from '../contexts/BookContext';
 import { BsLightningFill } from "react-icons/bs";
+import { FaBookDead } from 'react-icons/fa';
 import {
   Button,  
   Form,  
@@ -12,6 +13,7 @@ import {
 
 const UploadBook = () => {
 
+  const { libros, text } = useContext(BookContext);
   const { isAuth, axiosInstance }  = useContext(AuthContext);
 
   const [nombreLibro, setNombreLibro] = useState('');
@@ -95,6 +97,7 @@ const UploadBook = () => {
     <React.Fragment>
       <section className="form-signup">
       <h2 className="mb-4 tituloLibros"><BsLightningFill />Agrega un Libro, Give me Knowlege Baby</h2>
+        <h4 className="mb-4 tituloLibros">So far we got, {text} books <FaBookDead /></h4>
       <Form onSubmit={handleSubmit} >
 
       <FormGroup>

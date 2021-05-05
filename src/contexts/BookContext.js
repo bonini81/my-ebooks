@@ -53,7 +53,7 @@ const BookContextProvider = (props) => {
     return (
 
         <BookContext.Provider value={{
-            getLibros, libros, text
+         libros, text
          }
         
         }>

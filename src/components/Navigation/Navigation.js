@@ -73,7 +73,7 @@ const authNavbar = () => {
             </NavItem>
 
             <NavItem>
-              <NavLink tag={Link} to="/signup"><FaFileSignature /> Sign Up</NavLink>
+              <NavLink tag={Link} to="/signup"><FaFileSignature /> Sign Up - SEARCH</NavLink>
             </NavItem>
 
             <NavItem>

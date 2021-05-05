@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { FcReading } from "react-icons/fc";
+import { FcReading  } from "react-icons/fc";
 import { FcPortraitMode } from "react-icons/fc";
 import { FcUpload } from "react-icons/fc";
 import { FcDataBackup } from "react-icons/fc";
@@ -8,9 +8,11 @@ import { FcRight } from "react-icons/fc";
 import { FcRightDown } from "react-icons/fc";
 import { FcSportsMode } from "react-icons/fc";
 import { FaAngleRight } from 'react-icons/fa';
+import { FaBookDead} from 'react-icons/fa';
+import { FaSkull } from 'react-icons/fa';
 
 import { BookContext } from '../contexts/BookContext';
-
+import { UserCountContext } from '../contexts/UserCountContext';
 
 /*
 Home View Documentation:
@@ -24,7 +26,8 @@ This view display the main paths of the App, Book download area, user creation, 
 
 const Home = () => {
 
-  const { libros, text } =  useContext(BookContext);
+  const { libros, text } = useContext(BookContext);
+  const { userCount } =  useContext(UserCountContext);
   console.log("La consola te dice: ", text);
     return (  
 
@@ -40,14 +43,15 @@ const Home = () => {
         
           </a>
           <p className="link-home-text">Book Download Area <FaAngleRight /></p>
-          <p className="link-home-text">Book Counter: { text }</p>
+          <p className="link-home-text"><FaBookDead /> So far: { text } books</p>
         </div>
         
         <div className="col-lg-3">
           <a href="/signup">
           <FcPortraitMode size={200} />
           </a>
-       <p className="link-home-text">User Creation Area <FaAngleRight /></p>
+              <p className="link-home-text">User Creation Area <FaAngleRight /></p>
+              <p className="link-home-text"> So far we got  { userCount } < FaSkull /></p>
         </div>
 
 

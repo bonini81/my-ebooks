@@ -18,15 +18,17 @@ import Routes from './Routes';
 import './App.css';
 import UserNameContextProvider from './contexts/UserNameContext';
 import BookContextProvider from './contexts/BookContext';
+import UserCountContextProvider from './contexts/UserCountContext';
  
 
 function App() {
   return (
 
-    <React.StrictMode>
+    
     <React.Fragment>
       <Router>
       <AuthContextProvider>
+      <UserCountContextProvider>  
       <BookContextProvider>
       <UserNameContextProvider>
      
@@ -43,10 +45,11 @@ function App() {
   
       </UserNameContextProvider>
       </BookContextProvider>
+      </UserCountContextProvider>    
       </AuthContextProvider>
       </Router>
       </React.Fragment>
-      </React.StrictMode>
+  
   );
 
 }
