@@ -5,21 +5,19 @@ import User from '../components/User/User.js';
 import { FaSkull } from 'react-icons/fa';
  
 const UserList = () => {
-
-
+    
+  
+ 
     const { axiosInstance, isAuth } =  useContext(AuthContext);
     const { userCount } =  useContext(UserCountContext);
 
-    const [ users, setUsers ] = useState( [] );
+   // const [ users, setUsers ] = useState( [] );
     
-    const getUsers = () =>  axiosInstance.get('/api/v1/users');
+   // const getUsers = () =>  axiosInstance.get('/api/v1/users');
+
+  /*  useEffect( () => {
  
-
-    useEffect( () => {
-
-        //  if (!isAuth) return ( <Redirect to="/" /> )
-      
-          getUsers()
+           getUsers()
           .then(( response ) => {
       
               const users = response.data;
@@ -30,14 +28,14 @@ const UserList = () => {
           .catch (() =>
        
                 setUsers(`No hay usuarios`)
-              );
+              ); */
 
               /**
                * usefect fuciona al cargarse el componente y hay que poner los [] al final sino se vuelve una *actualizacion infinita del componente. 
                * 
                */
       
-      }, [] )
+    //  }, [] )
 
 
 
@@ -47,14 +45,14 @@ const UserList = () => {
 
     <React.Fragment>
 
-<p className="text-center user-count">Al momento hay { userCount } <FaSkull /> </p>
+<p className="text-center user-count">Al momento hay { userCount.length }  <FaSkull /> </p>
 
 
-<h1 className="text-center">Usuarios Activos</h1>
+            <h1 className="text-center">Usuarios Activos </h1>
 <div className="d-flex flex-wrap flex-usuario-card">
 
 
-    { users.map((user) => {
+    { userCount.map((user) => {
           
         return <User 
 
@@ -67,6 +65,7 @@ const UserList = () => {
         />
      
     })}
+                
 </div> 
     </React.Fragment>
 

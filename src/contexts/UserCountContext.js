@@ -16,8 +16,8 @@ export const UserCountContext = createContext();
 const UserCountContextProvider = (props) => {
 
     
-  const { axiosInstance } = useContext(AuthContext);
-  const [userCount, setUserCount] = useState('No hay users wey');
+  const { axiosInstance, isAuth } = useContext(AuthContext);
+  const [userCount, setUserCount] = useState([]);
 
   
   
@@ -29,7 +29,7 @@ const UserCountContextProvider = (props) => {
     .then(( response ) => {
       
         const usersCount = response.data;
-        setUserCount( usersCount.length );
+        setUserCount( usersCount );
       
  
 
@@ -46,7 +46,7 @@ const UserCountContextProvider = (props) => {
          */
 
 
-}, [] )
+}, [isAuth] )
   
 
     return (

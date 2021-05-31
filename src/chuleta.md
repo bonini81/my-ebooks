@@ -60,3 +60,15 @@ https://stackoverflow.com/questions/3601911/how-do-i-undo-a-checkout-in-git
 #Upload images article  (explicacion de video 16 black belt, 2h 25 minutos)
 
 https://codeburst.io/react-image-upload-with-kittens-cc96430eaece
+
+
+Useffect Explained
+why does useeffect in react render data after page load
+https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects
+
+useeffect in react only works after page reload
+https://stackoverflow.com/questions/61550771/useeffect-runs-api-request-after-i-refresh-the-page
+
+
+Working solution
+https://stackoverflow.com/questions/61761348/react-context-returns-undefined-on-first-login-but-works-on-page-refresh

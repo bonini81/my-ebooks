@@ -16,7 +16,7 @@ export const BookContext = createContext();
 const BookContextProvider = (props) => {
 
     
-    const { axiosInstance } =  useContext(AuthContext);
+    const { axiosInstance, isAuth } =  useContext(AuthContext);
     const [ libros, setLibros ] = useState( null );
     const [ text, setText ] = useState( null );
     
@@ -48,7 +48,7 @@ const BookContextProvider = (props) => {
            */
 
   
-  }, [] )
+  }, [isAuth] )
 
     return (
 

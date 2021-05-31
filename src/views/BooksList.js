@@ -32,6 +32,7 @@ useEffect( () => {
     .catch (() =>
  
         setText(`No hay libros disponibles`)
+        
         );
 
         //usefect fuciona al cargarse el componente y hay que poner los [] al final sino se vuelve una actualizacion infinita

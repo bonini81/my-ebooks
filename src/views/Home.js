@@ -43,7 +43,7 @@ const Home = () => {
         
           </a>
           <p className="link-home-text">Book Download Area <FaAngleRight /></p>
-          <p className="link-home-text"><FaBookDead /> So far: { text } books</p>
+              <p className="link-home-text"><FaBookDead /> So far: {text} books</p>
         </div>
         
         <div className="col-lg-3">
@@ -51,7 +51,7 @@ const Home = () => {
           <FcPortraitMode size={200} />
           </a>
               <p className="link-home-text">User Creation Area <FaAngleRight /></p>
-              <p className="link-home-text"> So far we got  { userCount } < FaSkull /></p>
+              <p className="link-home-text"> So far we got { userCount.length } < FaSkull /></p>
         </div>
 
 
